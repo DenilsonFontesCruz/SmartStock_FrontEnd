@@ -1,17 +1,20 @@
-import React from "react";
+import React, {useContext} from "react";
 import "../Styles/HeaderStyle.css";
+import {LoginSystemContex} from '../contexts/loginContext'
+import { useHistory } from "react-router";
 
 export default function Header() {
-    
-    const [accountLogged, setAccountLogged] = React.useState(false)
 
+    const {loginActive} = useContext(LoginSystemContex);
+    const history = useHistory()
 
-    function changeAccount() {
-        setAccountLogged(!accountLogged)
+    function goToLogin() {   
+        history.push("/login")
     }
 
-    
-
+    function goToRegister() {
+        history.push("/register")
+    }
 
     return (
         <div className="headerContainer">
@@ -20,17 +23,17 @@ export default function Header() {
             </div>
 
             <div className="headerRight">
-            { accountLogged ? (
+            { loginActive ? (
                 <div className="accountCont" id="accountCont">
                     <p>Denilson Fontes Da Cruz</p>
-                    <img src="icons/avatardefault.svg" alt="avatarDefault" className="avatarIcon" onClick={changeAccount}></img>
+                    <img src="icons/avatardefault.svg" alt="avatarDefault" className="avatarIcon"></img>
                 </div>
                 
             ) : 
             (
                 <div className="buttonsCont" id="buttonsCont">
-                    <button id="registerButton">Cadastrar</button>
-                    <button id="loginButton" onClick={changeAccount}>Login</button>
+                    <button id="registerButton" onClick={goToRegister}>Cadastrar</button>
+                    <button id="loginButton" onClick={goToLogin}>Login</button>
                 </div>
             )}
             </div>

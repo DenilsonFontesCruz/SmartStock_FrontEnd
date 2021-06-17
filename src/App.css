@@ -20,12 +20,3 @@ body,html, .App, #root {
     }
 }
 
-
-.layout {
-    height: 100%;
-    width: 100%;
-    display: grid;
-    grid-template:  "nav head" 3.75rem
-                    "nav container" 1fr
-                    / 4.5rem 1fr;
-} 

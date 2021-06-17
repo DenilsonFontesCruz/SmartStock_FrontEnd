@@ -1,26 +1,12 @@
 import React from 'react';
-import HeaderComp from './components/Header';
-import NavComp from './components/Nav';
-import ContentContainer from './components/ContentContainer';
+import Webpages from "./Webpages";
 import "./App.css";
 
 function App() {
 
-  const LogginAccount = false
-
-  return (
+  return (  
     <div className="App">
-      {
-      LogginAccount ? (
-        <div>Hello</div>
-      ) : (
-        <div className="layout">
-          <HeaderComp />
-          <NavComp />
-          <ContentContainer />
-        </div>
-      ) 
-      }
+      <Webpages />
     </div>
   );
 }
