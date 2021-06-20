@@ -1,5 +1,9 @@
 SmartStock is a Storage Manager Website Project
 
+Backend: https://github.com/leonardovilches/smartstock
+
+Project Features: 
+
 - [ ]  Design
     - [ ]  Hub
         - [x]  Header
