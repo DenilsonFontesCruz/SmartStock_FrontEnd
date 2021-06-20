@@ -43,6 +43,7 @@
     color: var(--white);
     font-family: 'Poppins';
     font-style: italic;
+    cursor: default;
 }
 
 .accountCont img{

@@ -5,7 +5,7 @@ import { useHistory } from "react-router";
 
 export default function Header() {
 
-    const {loginActive} = useContext(LoginSystemContex);
+    const {loginActive, accountData} = useContext(LoginSystemContex);
     const history = useHistory()
 
     function goToLogin() {   
@@ -25,7 +25,7 @@ export default function Header() {
             <div className="headerRight">
             { loginActive ? (
                 <div className="accountCont" id="accountCont">
-                    <p>Denilson Fontes Da Cruz</p>
+                    <p>{accountData.nome}</p>
                     <img src="icons/avatardefault.svg" alt="avatarDefault" className="avatarIcon"></img>
                 </div>
                 
