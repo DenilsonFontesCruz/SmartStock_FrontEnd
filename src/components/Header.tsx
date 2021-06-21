@@ -1,5 +1,5 @@
 import React, {useContext} from "react";
-import "../Styles/HeaderStyle.css";
+import styles from "../Styles/HeaderStyle/HeaderStyle.module.css";
 import {LoginSystemContex} from '../contexts/loginContext'
 import { useHistory } from "react-router";
 
@@ -17,21 +17,21 @@ export default function Header() {
     }
 
     return (
-        <div className="headerContainer">
-            <div className="headerLeft">
+        <div className={styles.headerContainer}>
+            <div className={styles.headerLeft}>
                 <h1>SmartStock</h1>
             </div>
 
-            <div className="headerRight">
+            <div className={styles.headerRight}>
             { loginActive ? (
-                <div className="accountCont" id="accountCont">
+                <div className={styles.accountCont} id="accountCont">
                     <p>{accountData.nome}</p>
-                    <img src="icons/avatardefault.svg" alt="avatarDefault" className="avatarIcon"></img>
+                    <img src="icons/avatardefault.svg" alt="avatarDefault" className={styles.avatarIcon}></img>
                 </div>
                 
             ) : 
             (
-                <div className="buttonsCont" id="buttonsCont">
+                <div className={styles.buttonsCont} id="buttonsCont">
                     <button id="registerButton" onClick={goToRegister}>Cadastrar</button>
                     <button id="loginButton" onClick={goToLogin}>Login</button>
                 </div>

@@ -1,9 +1,9 @@
 import React from "react";
-import "../Styles/ContentContainerStyle.css";
+import styles from "../Styles/ContentContainerStyle/ContentContainerStyle.module.css";
 
 export default function ContentContainer() {
     return (
-        <div className="contentCont">
+        <div className={styles.contentCont}>
             <div>
                 
             </div>

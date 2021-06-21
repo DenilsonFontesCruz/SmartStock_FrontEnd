@@ -1,5 +1,5 @@
 import React from "react";
-import '../Styles/NavStyle.css'
+import styles from '../Styles/NavStyle/NavStyle.module.css'
 
 export default function Nav() {
     
@@ -8,7 +8,7 @@ export default function Nav() {
     }
 
     return (
-        <div className="navContainer">
+        <div className={styles.navContainer}>
             <button onClick={() => printHello("Menu")}>
                 <img src="icons/Menu.svg" alt="Menu" ></img>
             </button>

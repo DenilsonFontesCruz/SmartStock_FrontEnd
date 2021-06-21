@@ -10,7 +10,7 @@
 
 .loginCont {
     width: 31.25rem;
-    height: 39rem;
+    height: 35rem;
     background-color: var(--white);
 
     display: flex;
@@ -28,14 +28,36 @@
     letter-spacing: 5px;
 
     box-sizing: border-box;
-    margin-top: 4rem;
+    margin-top: 2.5rem;
     margin-bottom: 0;
-    flex-grow: 4;
+}
+
+.titleLogin {
+    font-family: 'Oswald';
+    font-size: 2.8rem;
+    font-weight: 600;
+    letter-spacing: -1px;
+    margin: 0;
+    line-height: 100%;
+
+    align-self: flex-start;
+
+    color: var(--errorDetailColor);
+
+    cursor: pointer;
+    transition: 0.4s;
+}
+
+.titleLogin:hover {
+    color: var(--primaryColor);
+
+    transform: scale(1.16, 1.24);
+    transition: 0.4s;
 }
 
 .errorAndLoadingCont {
     flex-grow: 1;
-    display: none;
+    display: flex;
     align-items: center;
     justify-content: center;
     width: 100%;
@@ -53,8 +75,9 @@
     color: var(--darkGray);
 
     background-color: var(--errorDetailColor);
-    text-align: center;
-    line-height: calc(3rem + 0.3rem);
+
+    justify-content: center;
+    align-items: center;
 
     border-radius: 2px;
 }
@@ -62,7 +85,7 @@
 .loadingCont {
     display: none;
     justify-content: center;
-    margin-bottom: 1rem;
+    margin-top: 1rem;
 }
 
 .loadingCont::after {
@@ -81,21 +104,25 @@
 
 .loadingCont::after {
     content: "";
-
     width: 2.5rem;
     height: 2.5rem;
 }
 
 .loginCont label {
-    flex-grow: 3;
     position: relative;
     height: 5.625rem;
     width: auto;
     overflow: hidden;
     
-    margin: 2%;
 }
 
+.loginCont label:first-of-type {
+    margin-top: 1rem;
+}
+
+.loginCont label:last-of-type {
+    margin-bottom: 2rem;
+}
 
 .loginCont label p {
     font-family: 'Rajdhani';
@@ -117,7 +144,7 @@
     height: 3rem;
 
     box-sizing: border-box;
-    padding: 0 15px;
+    padding: 0 3.2rem 0 1rem;
     outline: none;
 
     background-color: var(--lightGray);
@@ -139,6 +166,17 @@
     height: 3rem;
     background-color: var(--midleGray);
     transition: 0.2s;
+}
+
+.loginCont label img {
+    right: 8px;
+    top: calc(50% - 1.1rem);
+    position: absolute;
+    width: 2.2rem;
+    height: 2.2rem;
+
+    filter: grayscale();
+    transition: 0.4s;
 }
 
 /* SelectInput */
@@ -163,7 +201,16 @@
     transition: 0.2s;
 }
 
+.loginCont label:focus-within img {
+    filter: brightness(0%);
+    transition: 0.4s;
+}
+
 /* Error Camp */
+
+.errorLabel img {
+    filter: brightness(100%) grayscale(0) !important;
+}
 
 .errorLabel input{
     color: var(--primaryColor) !important;
@@ -242,4 +289,15 @@
     font-size: 1.25rem;
     font-weight: 500;
     transition: 0.2s;
+}
+
+.loginButtonHover {
+    transform: scale(1.07,1.07) !important;
+    transition: 0.4s !important;
+}
+
+.loginButtonActive {
+    background-color: var(--errorDetailColor) !important;
+    transform: scale(1,1) !important;
+    transition: 0.2s !important;
 }

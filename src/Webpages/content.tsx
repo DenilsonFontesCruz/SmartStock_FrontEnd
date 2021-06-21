@@ -1,12 +1,12 @@
 import React from "react";
-import '../Styles/content.css';
+import styles from '../Styles/ContentStyle/content.module.css';
 import HeaderComp from '../components/Header';
 import NavComp from '../components/Nav';
 import ContentContainer from '../components/ContentContainer';
 
 export default function ContentPage() {
     return (
-        <div className="layout">
+        <div className={styles.layout}>
                 <HeaderComp />
                 <NavComp />
                 <ContentContainer />
