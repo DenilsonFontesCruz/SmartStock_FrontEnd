@@ -10,7 +10,7 @@ Project Features:
         - [x]  Nav
         - [ ]  Nav Menu
         - [ ]  Account Menu
-    - [ ]  Login Page
+    - [x]  Login Page
     - [ ]  Content Page
         - [ ]  Product List
         - [ ]  Add Product

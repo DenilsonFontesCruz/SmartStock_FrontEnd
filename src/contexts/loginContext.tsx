@@ -89,12 +89,17 @@ export default function LoginSystemProvider({ children, ...rest }: LoginSystemPr
                     return 0
                 })
                 .catch (error => {
-                    if(error.response.data.message != null) {
-                        return error.response.data.message
+                    if(error.response != null) {
+                        if(error.response.data.message != null) {
+                            return error.response.data.message
+                        }
+                        else {
+                            return "Erro não identificado"
+                        } 
                     }
                     else {
-                        return "Erro não identificado"
-                    } 
+                        return "Erro no servidor"
+                    }
                 })
     
                 return data

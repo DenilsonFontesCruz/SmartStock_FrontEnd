@@ -16,5 +16,230 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: space-around;
+
+    border-radius: 2px;
+}
+
+.loginCont h1 {
+
+    font-family: 'Oswald';
+    font-size: 3.125rem;
+    font-weight: 400;
+    letter-spacing: 5px;
+
+    box-sizing: border-box;
+    margin-top: 4rem;
+    margin-bottom: 0;
+    flex-grow: 4;
+}
+
+.errorAndLoadingCont {
+    flex-grow: 1;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 3rem;
+}
+
+.errorMessage {
+    display: none;
+    width: 80%;
+    height: 3rem;
+
+    font-size: 1rem;
+    font-family: 'Cairo';
+    font-weight: 600;
+    color: var(--darkGray);
+
+    background-color: var(--errorDetailColor);
+    text-align: center;
+    line-height: calc(3rem + 0.3rem);
+
+    border-radius: 2px;
+}
+
+.loadingCont {
+    display: none;
+    justify-content: center;
+    margin-bottom: 1rem;
+}
+
+.loadingCont::after {
+    border:solid 0.4rem var(--lightGray);
+    border-top-color: var(--darkGray); 
+    border-radius: 50%;
+    
+    animation: loadingAnimation 0.9s linear infinite;
+}
+
+@keyframes loadingAnimation {
+    to {
+        transform: rotate(1turn);
+    }
+}
+
+.loadingCont::after {
+    content: "";
+
+    width: 2.5rem;
+    height: 2.5rem;
+}
+
+.loginCont label {
+    flex-grow: 3;
+    position: relative;
+    height: 5.625rem;
+    width: auto;
+    overflow: hidden;
+    
+    margin: 2%;
+}
+
+
+.loginCont label p {
+    font-family: 'Rajdhani';
+    font-weight: 800;
+    color: var(--midleGray);
+
+    margin: 0;
+
+    display: flex;
+    flex-direction: column;
+
+    transition: 0.2s;
+}
+
+.loginCont label input {
+    padding: 0;
+    border: 0;
+    width: 22rem;
+    height: 3rem;
+
+    box-sizing: border-box;
+    padding: 0 15px;
+    outline: none;
+
+    background-color: var(--lightGray);
+
+    font-size: 1.15rem;
+    font-family: 'Cairo';
+    font-weight: 300;
+    color: var(--midleGray);
+
+    border-radius: 2px;
+
+    transition: 0.2s;
+}
+
+.loginCont label span {
+    left: 0%;
+    position: absolute;
+    width: 5px;
+    height: 3rem;
+    background-color: var(--midleGray);
+    transition: 0.2s;
+}
+
+/* SelectInput */
+
+.loginCont label:focus-within input {
+    font-size: 1.25rem;
+    font-weight: 600;
+    border: solid 1px var(--darkGray);
+    color: var(--darkGray);
+
+    transition: 0.2s;
+    
+}
+
+.loginCont label:focus-within span{
+    background-color: var(--darkGray);
+    transition: 0.2s;
+}
+
+.loginCont label:focus-within p {
+    color: var(--darkGray);
+    transition: 0.2s;
+}
+
+/* Error Camp */
+
+.errorLabel input{
+    color: var(--primaryColor) !important;
+    border: solid 1px var(--primaryColor) !important;
+}
+
+.errorLabel span {
+    background-color: var(--primaryColor) !important;
+}
+
+.errorLabel p {
+    color: var(--primaryColor) !important;
+}
+
+.loginButtonsCont {
+    height: 8rem;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.loginButtonsCont button:first-child{
+    height: 4rem;
+    width: 22rem;
+
+    border: none;
+    outline: none;
+    border-radius: 2px;
+
+    font-family: 'Rajdhani';
+    font-weight: 800;
+    font-size: 1.625rem;
+    color: var(--white);
+
+    background-color: var(--primaryColor);
+
+    transition: 0.4s;
+}
+
+.loginButtonsCont button:first-child:hover {
+    transform: scale(1.07,1.07);
+    transition: 0.4s;
+}
+
+.loginButtonsCont button:first-child:active {
+    background-color: var(--errorDetailColor);
+    transform: scale(1,1);
+    transition: 0.2s;
+}
+
+.loginButtonsCont button:last-child {
+    border: none;
+    background: none;
+    outline: none;
+
+    height: 2rem;
+    margin: 0.5rem;
+
+    font-family: 'Cairo';
+    font-size: 1.25rem;
+    font-weight: 500;
+    color: var(--midleGray);
+    
+    transition: 0.4s;
+}
+
+.loginButtonsCont button:last-child:hover {
+    font-size: 1.35rem;
+    font-weight: 800;
+    color: var(--darkGray);
+    transition: 0.4s;
+}
+
+.loginButtonsCont button:last-child:active {
+    font-size: 1.25rem;
+    font-weight: 500;
+    transition: 0.2s;
 }
